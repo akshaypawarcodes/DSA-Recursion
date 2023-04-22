@@ -1,16 +1,20 @@
-class HelloWorld {
-    public static void main(String[] args) {
+public class Example {
+
+    public static void main(String[] args){
+        String str = "Name Is Khan My";
+        String rev = reverse(str);
+        System.out.println("Reversed sentence: " + rev);
+  }
+
+    public static String reverse(String s) {
+    // Finding the index of the whitespaces
+    int x = s.indexOf(" ");
     
-        String s="My Name Is Khan";
-        System.out.print("Reverse of String is:"+ reverse(s));
-        
-    }
-    public static String reverse(String s){
-        int x=s.indexOf(" ");
-        
-        if(x == -1)
-        return s;
-        
-        return s.substring(x+1) +" "+s.substring(0,x);
-    }
+    //Base condition
+    if(x == -1)
+      return s;
+      
+     //Recursive call
+    return reverse(s.substring(x+1)) +" "+ s.substring(0, x);
+     }
 }
